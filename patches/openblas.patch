@@ -1,0 +1,20 @@
+diff -ruN a/cmake_aux/Modules/ARMA_FindOpenBLAS.cmake b/cmake_aux/Modules/ARMA_FindOpenBLAS.cmake
+--- a/cmake_aux/Modules/ARMA_FindOpenBLAS.cmake	2016-06-16 19:19:17.000000000 +0300
++++ b/cmake_aux/Modules/ARMA_FindOpenBLAS.cmake	2019-02-22 10:34:16.517271100 +0300
+@@ -2,6 +2,7 @@
+ set(OpenBLAS_NAMES ${OpenBLAS_NAMES} openblaso)
+ set(OpenBLAS_NAMES ${OpenBLAS_NAMES} openblasp)
+ set(OpenBLAS_NAMES ${OpenBLAS_NAMES} openblas )
++set(OpenBLAS_NAMES ${OpenBLAS_NAMES} openblas_d)
+ 
+ set(OpenBLAS_TMP_LIBRARY)
+ set(OpenBLAS_TMP_LIBRARIES)
+@@ -10,7 +11,7 @@
+ foreach (OpenBLAS_NAME ${OpenBLAS_NAMES})
+   find_library(${OpenBLAS_NAME}_LIBRARY
+     NAMES ${OpenBLAS_NAME}
+-    PATHS ${CMAKE_SYSTEM_LIBRARY_PATH} /lib64 /lib /usr/lib64 /usr/lib /usr/local/lib64 /usr/local/lib /opt/local/lib64 /opt/local/lib
++    PATHS ${CMAKE_SYSTEM_LIBRARY_PATH} ${CONAN_OPENBLAS_ROOT}/lib /lib64 /lib /usr/lib64 /usr/lib /usr/local/lib64 /usr/local/lib /opt/local/lib64 /opt/local/lib
+     )
+   
+   set(OpenBLAS_TMP_LIBRARY ${${OpenBLAS_NAME}_LIBRARY})
