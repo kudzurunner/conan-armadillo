@@ -4,7 +4,7 @@ import shutil
 
 class ArmadilloConan(ConanFile):
     name = "armadillo"
-    version = "9.200.7"
+    version = "9.800.3"
     license = "http://arma.sourceforge.net/license.html"
     author = "KudzuRunner"
     url = "https://github.com/kudzurunner/conan-armadillo"
@@ -19,8 +19,8 @@ class ArmadilloConan(ConanFile):
     suffix = ""
 
     def requirements(self):
-        self.requires.add('hdf5/1.10.4@kudzurunner/stable')
-        self.requires.add('openblas/0.3.5@kudzurunner/stable')
+        self.requires.add('hdf5/1.10.5@kudzurunner/stable')
+        self.requires.add('openblas/0.3.7@kudzurunner/stable')
 
     def source(self):
         url_template = "http://sourceforge.net/projects/arma/files/{}"
